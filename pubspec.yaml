@@ -37,6 +37,8 @@ dependencies:
   google_fonts: any
   material_color_utilities: ^0.1.4
   dynamic_color: ^1.4.0
+  lottie: any
+  cached_network_image: any
 
 
 dev_dependencies:
