@@ -1,33 +1,53 @@
+import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
-import 'package:nft_material/extensions.dart';
+import 'package:nft_material/theme.dart';
+import 'package:nft_material/widgets/brightness_toggle.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final settings = ValueNotifier(
+    ThemeSettings(
+      sourceColor: Colors.deepPurple,
+      themeMode: ThemeMode.system,
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        useMaterial3: true,
-        textTheme: context.textTheme,
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) => ThemeProvider(
+        settings: settings,
+        lightDynamic: lightDynamic,
+        darkDynamic: darkDynamic,
+        child: NotificationListener<ThemeSettingChange>(
+          onNotification: (notification) {
+            settings.value = notification.settings;
+            return true;
+          },
+          child: ValueListenableBuilder<ThemeSettings>(
+              valueListenable: settings,
+              builder: (context, value, _) {
+                final theme = ThemeProvider.of(context);
+                return MaterialApp(
+                  title: 'Flutter Demo',
+                  theme: theme.light(settings.value.sourceColor),
+                  darkTheme: theme.dark(settings.value.sourceColor),
+                  themeMode: theme.themeMode(),
+                  home: const MyHomePage(title: 'Flutter Demo Home Page'),
+                );
+              }),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -54,14 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+    // do nothing
   }
 
   @override
@@ -105,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            const BrightnessToggle(),
           ],
         ),
       ),
