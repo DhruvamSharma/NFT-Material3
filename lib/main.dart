@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
         useMaterial3: true,
+        textTheme: context.textTheme,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
