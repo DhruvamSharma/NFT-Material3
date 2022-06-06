@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nft_material/widgets/assoiation_widget.dart';
 import 'package:nft_material/widgets/common_header_widget.dart';
 import 'package:nft_material/widgets/landing_title_widget.dart';
 import 'package:nft_material/widgets/stats_widget.dart';
@@ -33,6 +34,10 @@ class HomePage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 40.0, top: 40.0),
                   child: StatsWidget(),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 40.0, top: 80.0),
+                  child: AssociationWidget(),
                 ),
               ],
             ),

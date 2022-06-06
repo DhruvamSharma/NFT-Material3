@@ -32,7 +32,9 @@ class LandingTitleWidget extends StatelessWidget {
               child: Container(
                 height: 40,
                 width: 90,
-                color: Theme.of(context).indicatorColor,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.blueAccent
+                    : Colors.purpleAccent.withOpacity(0.5),
               ),
             ),
             RichText(

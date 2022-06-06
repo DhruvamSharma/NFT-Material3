@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nft_material/asset_links.dart';
 import 'package:nft_material/widgets/brightness_toggle.dart';
 
 class CommonHeaderWidget extends StatelessWidget {
@@ -26,8 +27,8 @@ class CommonHeaderWidget extends StatelessWidget {
                 height: 40,
                 child: ClipOval(
                   child: CachedNetworkImage(
-                      imageUrl:
-                          'https://cdn.dribbble.com/users/1338391/avatars/normal/f997f0f5cf87d50e0a89d927ed8fa367.jpg?1645879198'),
+                    imageUrl: AssetLinks.profileImageLink,
+                  ),
                 ),
               ),
             ],

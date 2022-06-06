@@ -39,6 +39,8 @@ dependencies:
   dynamic_color: ^1.4.0
   lottie: any
   cached_network_image: any
+  simple_animations: any
+  animations: any
 
 
 dev_dependencies:

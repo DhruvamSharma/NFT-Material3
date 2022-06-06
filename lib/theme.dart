@@ -177,7 +177,7 @@ class ThemeProvider extends InheritedWidget {
       navigationRailTheme: navigationRailTheme(colorScheme),
       tabBarTheme: tabBarTheme(colorScheme),
       drawerTheme: drawerTheme(colorScheme),
-      scaffoldBackgroundColor: Colors.black,
+      scaffoldBackgroundColor: const Color(0xff1f2123),
       useMaterial3: true,
     );
   }
