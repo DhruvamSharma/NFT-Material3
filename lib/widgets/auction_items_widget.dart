@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:nft_material/models.dart';
 import 'package:nft_material/open_container_wrapper.dart';
 import 'package:nft_material/pages/auction_item.dart';
@@ -11,7 +12,7 @@ class AuctionItemsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 430,
+      height: 460,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0),
         child: PageView.builder(
@@ -48,19 +49,19 @@ class AuctionItemsWidget extends StatelessWidget {
                             children: [
                               Text(
                                 auctionItems[index].owner,
-                                style: Theme.of(context).textTheme.titleLarge,
+                                style: context.textTheme.titleLarge,
                               ),
                               const SizedBox(
                                 width: 10.0,
                               ),
                               Text(
                                 auctionItems[index].title.toUpperCase(),
-                                style: Theme.of(context).textTheme.titleSmall,
+                                style: context.textTheme.titleSmall,
                               ),
                               const Spacer(),
                               Text(
                                 auctionItems[index].userName,
-                                style: Theme.of(context).textTheme.caption,
+                                style: context.textTheme.caption,
                               ),
                             ],
                           ),
@@ -83,12 +84,11 @@ class AuctionItemsWidget extends StatelessWidget {
                                 children: [
                                   Text(
                                     auctionItems[index].timeLeft,
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
+                                    style: context.textTheme.titleMedium,
                                   ),
                                   Text(
                                     'Remaining Time',
-                                    style: Theme.of(context).textTheme.caption,
+                                    style: context.textTheme.caption,
                                   ),
                                 ],
                               ),
@@ -100,12 +100,11 @@ class AuctionItemsWidget extends StatelessWidget {
                                 children: [
                                   Text(
                                     auctionItems[index].price,
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
+                                    style: context.textTheme.titleMedium,
                                   ),
                                   Text(
                                     'Highest Bid',
-                                    style: Theme.of(context).textTheme.caption,
+                                    style: context.textTheme.caption,
                                   ),
                                 ],
                               ),

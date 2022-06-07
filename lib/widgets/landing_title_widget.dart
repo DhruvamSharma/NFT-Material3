@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 
 class LandingTitleWidget extends StatelessWidget {
   const LandingTitleWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final titleTheme = Theme.of(context).textTheme.headline4?.copyWith(
-          color: Theme.of(context).brightness == Brightness.dark
-              ? Colors.white
-              : Colors.black,
-        );
-    final subtitle = Theme.of(context).textTheme.caption?.copyWith(
-          wordSpacing: 2.0,
-          height: 1.5,
-        );
+    final titleTheme = context.textTheme.headline4?.copyWith(
+      color: Theme.of(context).brightness == Brightness.dark
+          ? Colors.white
+          : Colors.black,
+    );
+    final subtitle = context.textTheme.caption?.copyWith(
+      wordSpacing: 2.0,
+      height: 1.5,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -21,7 +22,7 @@ class LandingTitleWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             'Started',
-            style: Theme.of(context).textTheme.caption,
+            style: context.textTheme.caption,
           ),
         ),
         Stack(
@@ -43,7 +44,7 @@ class LandingTitleWidget extends StatelessWidget {
                   TextSpan(
                     text: 'Discover ',
                     style: titleTheme?.copyWith(
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w200,
                     ),
                   ),
                   TextSpan(
@@ -55,7 +56,7 @@ class LandingTitleWidget extends StatelessWidget {
                   TextSpan(
                     text: 'Of \n',
                     style: titleTheme?.copyWith(
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w200,
                     ),
                   ),
                   TextSpan(

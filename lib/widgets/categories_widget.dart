@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:nft_material/models.dart';
 import 'package:simple_animations/simple_animations.dart';
 
@@ -73,11 +74,11 @@ class CategoriesSingleWidget extends StatelessWidget {
           child: Center(
             child: Text(
               categories[index],
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: provider.selectedIndex == index
-                        ? Theme.of(context).scaffoldBackgroundColor
-                        : Theme.of(context).textTheme.caption?.color,
-                  ),
+              style: context.titleMedium?.copyWith(
+                color: provider.selectedIndex == index
+                    ? Theme.of(context).scaffoldBackgroundColor
+                    : Theme.of(context).textTheme.caption?.color,
+              ),
             ),
           ),
         ),

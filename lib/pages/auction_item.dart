@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:nft_material/models.dart';
 import 'package:nft_material/widgets/auction_item_title_widget.dart';
 import 'package:nft_material/widgets/highest_bid_widget.dart';
@@ -19,7 +20,10 @@ class AuctionItemPage extends StatelessWidget {
         ),
         child: AppBar(
           backgroundColor: Colors.transparent,
-          title: const Text('Auctions'),
+          title: Text(
+            'Auctions',
+            style: context.textTheme.titleMedium,
+          ),
           titleSpacing: 0,
           actions: [
             IconButton(
@@ -35,7 +39,10 @@ class AuctionItemPage extends StatelessWidget {
                 return {'Logout', 'Settings'}.map((String choice) {
                   return PopupMenuItem<String>(
                     value: choice,
-                    child: Text(choice),
+                    child: Text(
+                      choice,
+                      style: context.labelLarge,
+                    ),
                   );
                 }).toList();
               },
@@ -86,11 +93,11 @@ class AuctionItemPage extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20.0),
                   child: Text(
                     'A non-fungible token is a financial security consisting of digital data stored in a blockchain, a form of distributed ledger. The ownership of an NFT is recorded in the blockchain, and can be transferred by the owner, allowing NFTs to be sold and traded.',
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Theme.of(context).textTheme.caption?.color,
-                          height: 1.5,
-                          wordSpacing: 2.0,
-                        ),
+                    style: context.textTheme.titleMedium?.copyWith(
+                      color: context.textTheme.caption?.color,
+                      height: 1.5,
+                      wordSpacing: 2.0,
+                    ),
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -124,27 +131,21 @@ class AuctionItemPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Place Bid',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                      color: Theme.of(context).brightness ==
-                                              Brightness.dark
-                                          ? Colors.black
-                                          : Colors.white,
-                                    ),
+                                style: context.textTheme.titleMedium?.copyWith(
+                                  color: Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.black
+                                      : Colors.white,
+                                ),
                               ),
                               Text(
                                 item.timeLeft,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall
-                                    ?.copyWith(
-                                      color: Theme.of(context).brightness ==
-                                              Brightness.dark
-                                          ? Colors.black
-                                          : Colors.white,
-                                    ),
+                                style: context.textTheme.titleSmall?.copyWith(
+                                  color: Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.black
+                                      : Colors.white,
+                                ),
                               ),
                             ],
                           ),

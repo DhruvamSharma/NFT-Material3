@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nft_material/asset_links.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:nft_material/models.dart';
 import 'package:simple_animations/simple_animations.dart';
 
@@ -27,9 +28,7 @@ class AuctionItemTitleWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20.0),
             child: Text(
               item.title.toUpperCase(),
-              style: Theme.of(context)
-                  .textTheme
-                  .headline5
+              style: context.textTheme.headline5
                   ?.copyWith(fontWeight: FontWeight.w900),
             ),
           ),
@@ -47,9 +46,9 @@ class AuctionItemTitleWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     item.userName,
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          color: Theme.of(context).textTheme.caption?.color,
-                        ),
+                    style: context.textTheme.titleSmall?.copyWith(
+                      color: Theme.of(context).textTheme.caption?.color,
+                    ),
                   ),
                 ),
               ],

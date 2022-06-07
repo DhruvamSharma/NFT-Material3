@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:nft_material/pages/auctions.dart';
 
 class StatsWidget extends StatelessWidget {
@@ -55,10 +56,10 @@ class StatsWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
                     child: Text(
                       'Discover Artwork',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            letterSpacing: 8.0,
-                            height: 1.5,
-                          ),
+                      style: context.textTheme.titleLarge?.copyWith(
+                        letterSpacing: 8.0,
+                        height: 1.5,
+                      ),
                     ),
                   ),
                   Padding(
@@ -68,7 +69,7 @@ class StatsWidget extends StatelessWidget {
                       child: Divider(
                         height: 10,
                         thickness: 2,
-                        color: Theme.of(context).textTheme.titleLarge?.color,
+                        color: context.textTheme.titleLarge?.color,
                       ),
                     ),
                   ),
@@ -97,11 +98,11 @@ class SingleStatWidget extends StatelessWidget {
       children: [
         Text(
           number,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: context.textTheme.titleMedium,
         ),
         Text(
           description,
-          style: Theme.of(context).textTheme.caption,
+          style: context.textTheme.caption,
         ),
       ],
     );

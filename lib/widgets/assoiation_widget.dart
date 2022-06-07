@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nft_material/asset_links.dart';
+import 'package:nft_material/extensions.dart';
 
 class AssociationWidget extends StatelessWidget {
   const AssociationWidget({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class AssociationWidget extends StatelessWidget {
       children: [
         Text(
           'Supported by',
-          style: Theme.of(context).textTheme.caption,
+          style: context.textTheme.caption,
         ),
         CachedNetworkImage(
           imageUrl: AssetLinks.etherLogo,

@@ -69,7 +69,8 @@ class _BrightnessToggleState extends State<BrightnessToggle>
         SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
           _controller.animateTo(_controller.upperBound);
         });
-      } else {
+      } else if (Theme.of(context).brightness == Brightness.light &&
+          _controller.value != _controller.lowerBound) {
         SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
           _controller.reverse(from: _controller.upperBound);
         });
