@@ -18,10 +18,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final settings = ValueNotifier(
     ThemeSettings(
-      sourceColor: Colors.deepPurple,
+      sourceColor: Colors.amber,
       themeMode: ThemeMode.system,
     ),
   );
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

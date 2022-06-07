@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nft_material/asset_links.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:nft_material/widgets/brightness_toggle.dart';
 
 class CommonHeaderWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class CommonHeaderWidget extends StatelessWidget {
             children: [
               Text(
                 'D.',
-                style: Theme.of(context).textTheme.titleLarge,
+                style: context.textTheme.titleLarge,
               ),
               const Spacer(),
               const BrightnessToggle(),

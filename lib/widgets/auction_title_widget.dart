@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:nft_material/extensions.dart';
 
 class AuctionTitleWidget extends StatelessWidget {
   const AuctionTitleWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final titleTheme = Theme.of(context).textTheme.headline4?.copyWith(
-          color: Theme.of(context).brightness == Brightness.dark
-              ? Colors.white
-              : Colors.black,
-        );
-    final subtitleTheme = Theme.of(context).textTheme.caption?.copyWith(
-          wordSpacing: 2.0,
-          height: 1.5,
-        );
+    final titleTheme = context.textTheme.headline4?.copyWith(
+      color: Theme.of(context).brightness == Brightness.dark
+          ? Colors.white
+          : Colors.black,
+    );
+    final subtitleTheme = context.textTheme.caption?.copyWith(
+      wordSpacing: 2.0,
+      height: 1.5,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -21,7 +22,7 @@ class AuctionTitleWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             'Live',
-            style: Theme.of(context).textTheme.caption,
+            style: context.textTheme.caption,
           ),
         ),
         Stack(

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nft_material/asset_links.dart';
+import 'package:nft_material/extensions.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 class HighestBidWidget extends StatelessWidget {
@@ -35,15 +36,15 @@ class HighestBidWidget extends StatelessWidget {
               children: [
                 Text(
                   'Highest Bid Placed By',
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: Theme.of(context).textTheme.caption?.color,
-                      ),
+                  style: context.textTheme.titleSmall?.copyWith(
+                    color: context.textTheme.caption?.color,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     'Dhruvam',
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: context.textTheme.titleSmall,
                   ),
                 ),
               ],
