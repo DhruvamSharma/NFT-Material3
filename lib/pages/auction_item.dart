@@ -56,8 +56,8 @@ class AuctionItemPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              PlayAnimation<double>(
-                builder: (_, child, position) {
+              PlayAnimationBuilder<double>(
+                builder: (_, position, child) {
                   return Transform.translate(
                     offset: Offset(0, position),
                     child: child ?? Container(),
@@ -79,8 +79,8 @@ class AuctionItemPage extends StatelessWidget {
                 ),
               ),
               AuctionItemTitleWidget(item: item),
-              PlayAnimation<double>(
-                builder: (_, child, position) {
+              PlayAnimationBuilder<double>(
+                builder: (_, position, child) {
                   return Transform.translate(
                     offset: Offset(0, position),
                     child: child ?? Container(),
@@ -94,7 +94,7 @@ class AuctionItemPage extends StatelessWidget {
                   child: Text(
                     'A non-fungible token is a financial security consisting of digital data stored in a blockchain, a form of distributed ledger. The ownership of an NFT is recorded in the blockchain, and can be transferred by the owner, allowing NFTs to be sold and traded.',
                     style: context.textTheme.titleMedium?.copyWith(
-                      color: context.textTheme.caption?.color,
+                      color: context.textTheme.bodySmall?.color,
                       height: 1.5,
                       wordSpacing: 2.0,
                     ),
@@ -109,8 +109,8 @@ class AuctionItemPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
-                child: PlayAnimation<double>(
-                  builder: (_, child, position) {
+                child: PlayAnimationBuilder<double>(
+                  builder: (_, position, child) {
                     return Transform.translate(
                       offset: Offset(0, position),
                       child: child ?? Container(),

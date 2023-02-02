@@ -19,8 +19,8 @@ class AuctionItemsWidget extends StatelessWidget {
           pageSnapping: false,
           controller: PageController(viewportFraction: 0.8),
           itemBuilder: (_, index) {
-            return PlayAnimation<double>(
-              builder: (_, child, position) {
+            return PlayAnimationBuilder<double>(
+              builder: (_, position, child) {
                 return Transform.translate(
                   offset: Offset(position, 0),
                   child: child ?? Container(),
@@ -61,7 +61,7 @@ class AuctionItemsWidget extends StatelessWidget {
                               const Spacer(),
                               Text(
                                 auctionItems[index].userName,
-                                style: context.textTheme.caption,
+                                style: context.textTheme.bodySmall,
                               ),
                             ],
                           ),
@@ -88,7 +88,7 @@ class AuctionItemsWidget extends StatelessWidget {
                                   ),
                                   Text(
                                     'Remaining Time',
-                                    style: context.textTheme.caption,
+                                    style: context.textTheme.bodySmall,
                                   ),
                                 ],
                               ),
@@ -104,7 +104,7 @@ class AuctionItemsWidget extends StatelessWidget {
                                   ),
                                   Text(
                                     'Highest Bid',
-                                    style: context.textTheme.caption,
+                                    style: context.textTheme.bodySmall,
                                   ),
                                 ],
                               ),

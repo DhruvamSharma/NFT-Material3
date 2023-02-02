@@ -42,8 +42,8 @@ class CategoriesSingleWidget extends StatelessWidget {
   final CategoriesProvider provider;
   @override
   Widget build(BuildContext context) {
-    return PlayAnimation<double>(
-      builder: (_, child, position) {
+    return PlayAnimationBuilder<double>(
+      builder: (_, position, child) {
         return Transform.translate(
           offset: Offset(position, 0),
           child: child ?? Container(),
@@ -77,7 +77,7 @@ class CategoriesSingleWidget extends StatelessWidget {
               style: context.titleMedium?.copyWith(
                 color: provider.selectedIndex == index
                     ? Theme.of(context).scaffoldBackgroundColor
-                    : Theme.of(context).textTheme.caption?.color,
+                    : Theme.of(context).textTheme.bodySmall?.color,
               ),
             ),
           ),

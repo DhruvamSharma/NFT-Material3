@@ -11,8 +11,8 @@ class AuctionItemTitleWidget extends StatelessWidget {
   final AuctionItem item;
   @override
   Widget build(BuildContext context) {
-    return PlayAnimation<double>(
-      builder: (_, child, position) {
+    return PlayAnimationBuilder<double>(
+      builder: (_, position, child) {
         return Transform.translate(
           offset: Offset(0, position),
           child: child ?? Container(),
@@ -28,7 +28,7 @@ class AuctionItemTitleWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20.0),
             child: Text(
               item.title.toUpperCase(),
-              style: context.textTheme.headline5
+              style: context.textTheme.headlineSmall
                   ?.copyWith(fontWeight: FontWeight.w900),
             ),
           ),
@@ -47,7 +47,7 @@ class AuctionItemTitleWidget extends StatelessWidget {
                   child: Text(
                     item.userName,
                     style: context.textTheme.titleSmall?.copyWith(
-                      color: Theme.of(context).textTheme.caption?.color,
+                      color: Theme.of(context).textTheme.bodySmall?.color,
                     ),
                   ),
                 ),

@@ -9,8 +9,8 @@ class HighestBidWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PlayAnimation<double>(
-      builder: (_, child, position) {
+    return PlayAnimationBuilder<double>(
+      builder: (_, position, child) {
         return Transform.translate(
           offset: Offset(0, position),
           child: child ?? Container(),
@@ -37,7 +37,7 @@ class HighestBidWidget extends StatelessWidget {
                 Text(
                   'Highest Bid Placed By',
                   style: context.textTheme.titleSmall?.copyWith(
-                    color: context.textTheme.caption?.color,
+                    color: context.textTheme.bodySmall?.color,
                   ),
                 ),
                 Padding(

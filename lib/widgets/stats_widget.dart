@@ -102,7 +102,7 @@ class SingleStatWidget extends StatelessWidget {
         ),
         Text(
           description,
-          style: context.textTheme.caption,
+          style: context.textTheme.bodySmall,
         ),
       ],
     );

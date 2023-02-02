@@ -6,12 +6,12 @@ class LandingTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleTheme = context.textTheme.headline4?.copyWith(
+    final titleTheme = context.textTheme.headlineMedium?.copyWith(
       color: Theme.of(context).brightness == Brightness.dark
           ? Colors.white
           : Colors.black,
     );
-    final subtitle = context.textTheme.caption?.copyWith(
+    final subtitle = context.textTheme.bodySmall?.copyWith(
       wordSpacing: 2.0,
       height: 1.5,
     );
@@ -22,7 +22,7 @@ class LandingTitleWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             'Started',
-            style: context.textTheme.caption,
+            style: context.textTheme.bodySmall,
           ),
         ),
         Stack(

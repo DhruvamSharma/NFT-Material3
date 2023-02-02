@@ -50,10 +50,10 @@ extension TypographyUtils on BuildContext {
   TextStyle? get bodySmall => textTheme.bodySmall?.copyWith(
         color: colors.onSurface,
       );
-  TextStyle? get headline4 => textTheme.headline4?.copyWith(
+  TextStyle? get headline4 => textTheme.headlineMedium?.copyWith(
         color: colors.onSurface,
       );
-  TextStyle? get headline5 => textTheme.headline5?.copyWith(
+  TextStyle? get headline5 => textTheme.headlineSmall?.copyWith(
         color: colors.onSurface,
       );
 }

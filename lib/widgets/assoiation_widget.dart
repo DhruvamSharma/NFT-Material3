@@ -13,7 +13,7 @@ class AssociationWidget extends StatelessWidget {
       children: [
         Text(
           'Supported by',
-          style: context.textTheme.caption,
+          style: context.textTheme.bodySmall,
         ),
         CachedNetworkImage(
           imageUrl: AssetLinks.etherLogo,

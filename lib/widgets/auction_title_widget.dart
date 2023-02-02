@@ -6,12 +6,12 @@ class AuctionTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleTheme = context.textTheme.headline4?.copyWith(
+    final titleTheme = context.textTheme.headlineMedium?.copyWith(
       color: Theme.of(context).brightness == Brightness.dark
           ? Colors.white
           : Colors.black,
     );
-    final subtitleTheme = context.textTheme.caption?.copyWith(
+    final subtitleTheme = context.textTheme.bodySmall?.copyWith(
       wordSpacing: 2.0,
       height: 1.5,
     );
@@ -22,7 +22,7 @@ class AuctionTitleWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             'Live',
-            style: context.textTheme.caption,
+            style: context.textTheme.bodySmall,
           ),
         ),
         Stack(
