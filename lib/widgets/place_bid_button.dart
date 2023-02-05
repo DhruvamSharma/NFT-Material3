@@ -21,8 +21,10 @@ class _PlaceBidButtonState extends State<PlaceBidButton> {
         if (!isLoading) {
           enableOrDisableLoader(true);
           final imageData = await startDownloadUsingRunMethod();
-          print(imageData);
           enableOrDisableLoader(false);
+          if (!mounted) return;
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(imageData)));
         }
       },
       child: SizedBox(
@@ -46,10 +48,16 @@ class _PlaceBidButtonState extends State<PlaceBidButton> {
               ),
             ),
             if (isLoading)
-              LinearProgressIndicator(
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.black
-                    : Colors.white,
+              Positioned(
+                bottom: 0,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: LinearProgressIndicator(
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.black
+                        : Colors.white,
+                  ),
+                ),
               ),
           ],
         ),
@@ -59,7 +67,7 @@ class _PlaceBidButtonState extends State<PlaceBidButton> {
 
   void enableOrDisableLoader(bool isVisible) {
     setState(() {
-      isLoading =  isVisible;
+      isLoading = isVisible;
     });
   }
 }
