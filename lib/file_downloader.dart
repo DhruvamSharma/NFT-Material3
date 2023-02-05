@@ -23,7 +23,7 @@ Future<void> _readAndParseJson(List<dynamic> args) async {
   SendPort resultPort = args[0];
   String fileLink = args[1];
 
-  await Future.delayed(const Duration(seconds: 5));
+  await Future.delayed(const Duration(seconds: 2));
 
   Isolate.exit(resultPort, fileLink);
 }
@@ -74,6 +74,6 @@ Future<String> startDownloadUsingRunMethod() async {
 }
 
 Future<String> _readAndParseJsonWithoutIsolateLogic() async {
-  await Future.delayed(const Duration(seconds: 5));
-  return 'this is a new link';
+  await Future.delayed(const Duration(seconds: 2));
+  return 'this is downloaded data';
 }
