@@ -4,7 +4,7 @@ import 'package:nft_material/extensions.dart';
 import 'package:nft_material/models.dart';
 import 'package:nft_material/widgets/auction_item_title_widget.dart';
 import 'package:nft_material/widgets/highest_bid_widget.dart';
-import 'package:nft_material/widgets/shaded_container_widget.dart';
+import 'package:nft_material/widgets/place_bid_button.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 class AuctionItemPage extends StatelessWidget {
@@ -34,7 +34,10 @@ class AuctionItemPage extends StatelessWidget {
               ),
             ),
             PopupMenuButton<String>(
-              onSelected: (option) {},
+              onSelected: (option) {
+                // Show snack bar
+
+              },
               itemBuilder: (BuildContext context) {
                 return {'Logout', 'Settings'}.map((String choice) {
                   return PopupMenuItem<String>(
@@ -119,40 +122,7 @@ class AuctionItemPage extends StatelessWidget {
                   tween: Tween<double>(begin: 100, end: 0),
                   delay: const Duration(milliseconds: 90),
                   duration: kThemeAnimationDuration,
-                  child: SizedBox(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    child: ShadedContainerWidget(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Place Bid',
-                                style: context.textTheme.titleMedium?.copyWith(
-                                  color: Theme.of(context).brightness ==
-                                          Brightness.dark
-                                      ? Colors.black
-                                      : Colors.white,
-                                ),
-                              ),
-                              Text(
-                                item.timeLeft,
-                                style: context.textTheme.titleSmall?.copyWith(
-                                  color: Theme.of(context).brightness ==
-                                          Brightness.dark
-                                      ? Colors.black
-                                      : Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  child: PlaceBidButton(item: item),
                 ),
               ),
             ],

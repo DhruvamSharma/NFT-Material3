@@ -19,28 +19,27 @@ class HomePage extends StatelessWidget {
             top: -30,
             child: WaveFormWidget(),
           ),
-          SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: CommonHeaderWidget(),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(40.0),
-                  child: LandingTitleWidget(),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                  child: StatsWidget(),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 40.0, top: 80.0),
-                  child: AssociationWidget(),
-                ),
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: CommonHeaderWidget(),
+              ),
+              Padding(
+                padding: EdgeInsets.all(40.0),
+                child: LandingTitleWidget(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 40.0, top: 40.0),
+                child: StatsWidget(),
+              ),
+              Spacer(),
+              Padding(
+                padding: EdgeInsets.only(left: 40.0, top: 80.0, bottom: 20,),
+                child: AssociationWidget(),
+              ),
+            ],
           ),
         ],
       ),
