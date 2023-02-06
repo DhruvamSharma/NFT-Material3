@@ -66,6 +66,7 @@ class _PlaceBidButtonState extends State<PlaceBidButton> {
   }
 
   void enableOrDisableLoader(bool isVisible) {
+    if (!mounted) return;
     setState(() {
       isLoading = isVisible;
     });
