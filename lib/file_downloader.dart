@@ -23,9 +23,11 @@ Future<void> _readAndParseJson(List<dynamic> args) async {
   SendPort resultPort = args[0];
   String fileLink = args[1];
 
+  String newImageData = fileLink;
+
   await Future.delayed(const Duration(seconds: 2));
 
-  Isolate.exit(resultPort, fileLink);
+  Isolate.exit(resultPort, newImageData);
 }
 
 // Error Handling
